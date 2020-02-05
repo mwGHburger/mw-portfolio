@@ -1,0 +1,7 @@
+.card-content {
+  color: black;
+  &:hover {
+    text-decoration: none;
+    color: grey;
+  }
+}

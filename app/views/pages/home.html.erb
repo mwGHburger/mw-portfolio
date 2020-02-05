@@ -1,13 +1,25 @@
 <div class="home-page">
     <div class="home-grid-container">
-        <div class="grid-item-portfolio">
-            1
-        </div>
-        <div class="grid-item-about-me">
-            2
-        </div>
-        <div class="grid-item-blogs">3</div>
-        <div class="grid-item-github">4</div>
-        <div class="grid-item-linkedin">5</div>
+        
+        <%= link_to projects_path, class: "grid-item-portfolio card-content" do %>        
+            <h1>Portfolio</h1>
+        <% end%>
+        
+        <%= link_to projects_path, class: "grid-item-about-me card-content" do %>        
+            <h2>About Me</h2>
+        <% end%>
+
+        <%= link_to projects_path, class: "grid-item-blogs card-content" do %>        
+            <h2>Blogs</h2>
+        <% end%>
+
+        <%= link_to "https://github.com/mwGHburger", class: "grid-item-github card-content" do %>        
+            <i class="fab fa-github"></i>
+        <% end%>
+
+        <%= link_to 'https://www.linkedin.com/in/michael-wang-dev/', class: "grid-item-linkedin card-content" do %>        
+            <i class="fab fa-linkedin"></i>
+        <% end%>
+
     </div>
 </div>

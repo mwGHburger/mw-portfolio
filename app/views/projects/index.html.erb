@@ -1,0 +1,13 @@
+<div class="portfolio-page">
+    <h1>My Porfolio </h1>
+    <div class="portfolio-grid-container">
+        <% @projects.each do |project|%>
+            <div class="project-card">
+                <%= link_to project.project_link do %>
+                    <%= image_tag project.project_thumbnail, class: "project-card-image", alt: "pic" %>
+                <% end %>
+                <p class="project-card-title"><%= project.name %></p>
+            </div>
+        <% end %>
+    </div>
+</div>

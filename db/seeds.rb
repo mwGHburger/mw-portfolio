@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+puts 'Creating projects...'
+    4.times do 
+        project = Project.new(
+            name: "Project #{Faker::Superhero.name}",
+            project_link: "https://www.youtube.com/",
+            project_thumbnail: Faker::Avatar.image,
+            description: "This is a test project"
+        )
+        project.save!
+    end
+puts 'Finished!'

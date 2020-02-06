@@ -1,5 +1,19 @@
 .card-content {
-  color: black;
+  background-color: #f0f0f3;
+  box-shadow: -10px -10px 30px #fff;
+  box-shadow: 10px 10px 30px #e2e2e8;
+  border-radius: 15px;
+  color: #c7c7c9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: ease-in-out 0.3s;
+
+  p {
+    margin: 0;
+    font-size: 2rem;
+  }
+
   &:hover {
     text-decoration: none;
     color: grey;

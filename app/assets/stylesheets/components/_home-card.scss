@@ -22,8 +22,7 @@
     margin: 0;
     font-size: 2rem;
   }
-
-  &:hover {
+  &:active {
     text-decoration: none;
     color: #ff715b;
   }
@@ -37,6 +36,14 @@
 
     p {
       font-size: 3rem;
+    }
+    &:hover {
+      text-decoration: none;
+      transform: scale(1.1);
+      color: #ff715b;
+      transition: 1s;
+      box-shadow: 20px 20px 60px rgba(174, 174, 192, 0.5),
+        -20px -20px 60px rgba(255, 255, 255, 0.5);
     }
   }
 }

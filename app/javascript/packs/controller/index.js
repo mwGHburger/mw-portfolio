@@ -1,129 +1,63 @@
+import * as homePage from "../views/homepage";
+import * as aboutPage from "../views/aboutpage";
+import * as portfolioPage from "../views/portfoliopage";
+
+// LOAD event
 window.addEventListener("load", e => {
   // Homepage
-  homePageLoad();
+  homePage.homePageLoad();
   // Portfolio page
-  projectPageLoad();
+  portfolioPage.projectPageLoad();
   // About page
-  aboutPageLoad();
+  aboutPage.aboutPageLoad();
 });
 
+// CLICK event
 window.addEventListener("click", e => {
   console.log(e.target.matches(".card-content, .card-content *"));
   if (e.target.matches(".card-content, .card-content *")) {
-    homeCardClick();
+    homePage.homeCardClick();
     // e.preventDefault();
   }
 });
 
-const homeCardClick = () => {
-  const homeCards = Array.from(document.querySelectorAll(".home-card"));
-  homeCards.forEach((card, i) => {
-    setTimeout(() => {
-      // iterate through each card in the list
-      // apply transition to card
-      card.classList.remove("home-page-load");
-    }, i * 180);
-  });
-};
-
-const homePageLoad = () => {
-  console.log(document.querySelectorAll(".home-card").length > 0);
-  if (document.querySelectorAll(".home-card").length > 0) {
-    const homeCards = Array.from(document.querySelectorAll(".home-card"));
-    homeCards.forEach((card, i) => {
-      setTimeout(() => {
-        // iterate through each card in the list
-        // apply transition to card
-        card.classList.add("home-page-load");
-      }, i * 180);
-    });
-    const clock = document.querySelector(".current-clock");
-    setTimeout(() => {
-      clock.classList.add("current-clock-load");
-    }, 200 * document.querySelectorAll(".home-card").length);
-    console.log(clock);
+// HOVER event
+window.addEventListener("hover", e => {
+  if (e.target.matches(".card-content, .card-content *")) {
+    console.log("todo");
   }
-};
+});
 
-const projectPageLoad = () => {
-  if (document.querySelectorAll(".project-card").length > 0) {
-    const projects = Array.from(document.querySelectorAll(".project-card"));
-    const portfolioHeader = document.querySelector(".porfolio-title");
-    const backButton = document.querySelector(".back-btn");
-    console.log(backButton);
-    setTimeout(() => {
-      projects.forEach((card, i) => {
-        setTimeout(() => {
-          // iterate through each card in the list
-          // apply transition to card
-          card.classList.add("project-card-load");
-        }, i * 250);
-      });
-    }, 1000);
-    backButton.classList.add("back-btn-load");
-    portfolioHeader.classList.add("porfolio-title-load");
-  }
-};
+homePage.getCurrentTime();
+setInterval(homePage.getCurrentTime, 2000);
 
-const aboutPageLoad = () => {
-  if (document.querySelector(".profile-content")) {
-    // animate in button
-    const backButton = document.querySelector(".back-btn");
-    backButton.classList.add("back-btn-load");
-    // animate in title
-    const title = document.querySelector(".about-title");
-    title.classList.add("about-title-load");
-    // animate in pic
-    const image = document.querySelector(".profile-pic");
-    setTimeout(() => {
-      image.classList.add("profile-pic-load");
-    }, 1200);
+// MOUSEMOVE event
+// window.addEventListener("mousemove", e => {
+//     if (e.target.matches(".card-content")) {
+//       const rect = e.target.getBoundingClientRect();
 
-    // animate in description
-    const description = document.querySelector(".about-description");
-    setTimeout(() => {
-      description.classList.add("about-description-load");
-    }, 1400);
-  }
-};
+//       // calculating the relative position of the mouse within the element it is in
+//       let y = (e.clientY - rect.top) / e.target.offsetHeight;
+//       let x = (e.clientX - rect.left) / e.target.offsetWidth;
 
-const getCurrentTime = () => {
-  if (document.querySelector(".current-clock")) {
-    const clock = document.querySelector(".current-clock");
-    // clear the div
-    clock.innerHTML = "";
-    const date = new Date();
-    let amPm = "AM";
-    console.log(amPm);
-    let hour = date.getHours();
-    if (hour === 12) {
-      amPm = "PM";
-    } else if (hour > 12 && hour < 24) {
-      hour = hour - 12;
-      amPm = "PM";
-    } else if (hour === 24) {
-      hour = 0;
-    }
-    let minute = date.getMinutes();
-    // format
-    if (hour < 10) {
-      hour = "0" + hour;
-    }
+//       // format
+//       if (x === 0.5) {
+//         x = 0;
+//       } else if (x < 0.5) {
+//         x = (1 - x) * -1;
+//       }
 
-    if (minute < 10) {
-      minute = "0" + minute;
-    }
+//       if (y === 0.5) {
+//         y = 0;
+//       } else if (y < 0.5) {
+//         y = 1 - y;
+//       } else if (y > 0.5) {
+//         y = y * -1;
+//       }
 
-    clock.insertAdjacentHTML(
-      "beforeend",
-      `<h1>${hour}<span class="flicker">:</span>${minute} ${amPm}</h1>`
-    );
-
-    const flicker = document.querySelector(".flicker");
-    setTimeout(() => {
-      flicker.classList.add("active");
-    }, 1500);
-  }
-};
-getCurrentTime();
-setInterval(getCurrentTime, 2000);
+//       console.log(x * 5);
+//       console.log(y * 5);
+//       e.target.style.transition = "0.1s";
+//       e.target.style.transform = `skew(${y * 5}deg, ${x * 5}deg)`;
+//     }
+//   });

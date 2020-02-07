@@ -3,6 +3,8 @@ window.addEventListener("load", e => {
   homePageLoad();
   // Portfolio page
   projectPageLoad();
+  // About page
+  aboutPageLoad();
 });
 
 const homePageLoad = () => {
@@ -23,7 +25,8 @@ const projectPageLoad = () => {
   if (document.querySelectorAll(".project-card").length > 0) {
     const projects = Array.from(document.querySelectorAll(".project-card"));
     const portfolioHeader = document.querySelector(".porfolio-title");
-    console.log(portfolioHeader);
+    const backButton = document.querySelector(".back-btn");
+    console.log(backButton);
     setTimeout(() => {
       projects.forEach((card, i) => {
         setTimeout(() => {
@@ -33,7 +36,16 @@ const projectPageLoad = () => {
         }, i * 250);
       });
     }, 1000);
-
+    backButton.classList.add("back-btn-load");
     portfolioHeader.classList.add("porfolio-title-load");
   }
 };
+
+const aboutPageLoad = () => {
+  if (document.querySelector(".profile-content")) {
+    const backButton = document.querySelector(".back-btn");
+    backButton.classList.add("back-btn-load");
+  }
+};
+
+const backBtn = document.querySelector(".back-btn");

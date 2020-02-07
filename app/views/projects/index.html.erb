@@ -1,4 +1,8 @@
 <div class="portfolio-page">
+    <%= link_to root_path, class: "back-btn" do %>        
+        <i class="fas fa-arrow-left"></i>
+        <p>back</p>
+    <% end%>
     <h1 class="porfolio-title">my <span style="font-weight: 700;">Portfolio<span> </h1>
     <div class="portfolio-grid-container">
         <% @projects.each do |project|%>

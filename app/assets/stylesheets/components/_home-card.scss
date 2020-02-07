@@ -44,7 +44,7 @@
 // Page Load Animation
 .home-page-load {
   box-shadow: 10px 10px 30px #aeaec0, -10px -10px 30px #fff;
-  color: #c7c7c9;
+  color: $text;
   .home-card-text {
     animation-name: textAppear;
     animation-iteration-count: 1;

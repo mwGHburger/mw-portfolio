@@ -8,30 +8,32 @@
   background-color: #f8f8fa;
 }
 
-.about-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .about-title {
   text-align: center;
-  padding: 6px 8px;
-  height: 250px;
-  width: 250px;
-  border: 8px black solid;
-  outline: 10px #ff7b7b solid;
+  padding: 2rem 2rem;
+  border: 4px $text solid;
+  width: 320px;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: left;
   h1 {
-    font-size: 42px;
+    font-size: 2rem;
+    letter-spacing: 0.5rem;
     line-height: 63px;
     margin: 0;
+    color: $text;
   }
 }
 
+.profile-content {
+  margin: 4rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+// TODO
 .profile-pic {
   margin-top: 4rem;
   height: 180px;
@@ -40,20 +42,14 @@
   background-size: cover;
   border-radius: 50%;
   background-position: top 10% right 0%;
-}
-
-.profile-content {
-  margin: 4rem 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
+  //box-shadow: 10px 10px 30px #8b8b99, -10px -10px 30px #fff;
 }
 
 .about-description {
-  text-align: center;
+  text-align: left;
   margin: 2rem auto;
   padding: 8px 40px;
+  color: #a9a9b2;
   p {
     margin: 0;
     letter-spacing: 1.5px;
@@ -62,26 +58,26 @@
 }
 
 @media screen and (min-width: 992px) {
-  .profile-pic {
-    height: 430px;
-    width: 290px;
-    border-radius: 4px;
-    margin: 0;
-    position: relative;
-    top: 10rem;
-    left: -8rem;
+  .profile-content {
+    flex-direction: row;
   }
 
-  .about-header {
-    flex-direction: row-reverse;
+  .profile-pic {
+    height: 210px;
+    width: 140px;
+    border-radius: 0px;
+    padding: 1rem;
+    margin: 0;
+    position: relative;
+    top: 9rem;
+    left: -9rem;
+    outline: 4px $text solid;
   }
 
   .about-title {
-    top: 0;
-    right: 0;
-    position: relative;
-    height: 380px;
     width: 380px;
+    padding: 4rem 4rem;
+    margin: 4rem;
     font-size: 56px;
     h1 {
       span {
@@ -91,13 +87,9 @@
   }
 
   .about-description {
-    position: relative;
-    top: 0;
-    left: 8.5rem;
-    height: auto;
+    margin: 4rem;
     p {
       width: 380px;
-      text-align: left;
     }
   }
 }

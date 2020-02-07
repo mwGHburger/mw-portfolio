@@ -1,0 +1,65 @@
+.back-btn {
+  // initial state
+  opacity: 0;
+  //
+  color: #e4e4e4;
+  font-size: 1.8rem;
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  p {
+    opacity: 0;
+    margin: 0;
+    font-size: 1rem;
+  }
+  &:hover {
+    text-decoration: none;
+    color: $text;
+  }
+  &:active {
+    text-decoration: none;
+    color: $text;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .back-btn {
+    font-size: 2.5rem;
+    top: 2rem;
+    right: 4rem;
+    transition: 0.3s;
+    p {
+      transition: 0.3s;
+    }
+    &:hover {
+      p {
+        color: $text;
+        opacity: 100;
+      }
+    }
+  }
+}
+
+// page load animation
+.back-btn-load {
+  animation-name: backBtnAppear;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes backBtnAppear {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100;
+  }
+}

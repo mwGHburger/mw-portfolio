@@ -1,24 +1,24 @@
 <div class="home-page">
     <div class="home-grid-container">
         
-        <%= link_to projects_path, class: "grid-item-portfolio card-content" do %>        
-            <h1>Portfolio</h1>
+        <%= link_to projects_path, class: "grid-item-portfolio card-content home-card" do %>        
+            <h1 class="home-card-text">Portfolio</h1>
         <% end%>
         
-        <%= link_to about_path, class: "grid-item-about-me card-content" do %>        
-            <h2>About Me</h2>
+        <%= link_to about_path, class: "grid-item-about-me card-content home-card" do %>        
+            <h2 class="home-card-text">About Me</h2>
         <% end%>
 
-        <%= link_to projects_path, class: "grid-item-blogs card-content" do %>        
-            <h2>Blogs</h2>
+        <%= link_to projects_path, class: "grid-item-blogs card-content home-card" do %>        
+            <h2 class="home-card-text">Blogs</h2>
         <% end%>
 
-        <%= link_to "https://github.com/mwGHburger", class: "grid-item-github card-content" do %>        
-            <p><i class="fab fa-github"></i></p>
+        <%= link_to "https://github.com/mwGHburger", class: "grid-item-github card-content home-card" do %>        
+            <p class="home-card-text"><i class="fab fa-github"></i></p>
         <% end%>
 
-        <%= link_to 'https://www.linkedin.com/in/michael-wang-dev/', class: "grid-item-linkedin card-content" do %>        
-            <p><i class="fab fa-linkedin"></i></p>
+        <%= link_to 'https://www.linkedin.com/in/michael-wang-dev/', class: "grid-item-linkedin card-content home-card" do %>        
+            <p class="home-card-text"><i class="fab fa-linkedin"></i></p>
         <% end%>
 
     </div>

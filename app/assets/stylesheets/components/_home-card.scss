@@ -1,13 +1,22 @@
 .card-content {
-  background-color: #f0f0f3;
-  box-shadow: -10px -10px 30px #fff;
-  box-shadow: 10px 10px 30px #e2e2e8;
+  background-color: #f8f8fa;
   border-radius: 15px;
-  color: #c7c7c9;
+  color: #f8f8fa;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: ease-in-out 0.3s;
+  text-transform: uppercase;
+
+  h1 {
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 1rem;
+    margin: 0;
+  }
 
   p {
     margin: 0;
@@ -16,6 +25,43 @@
 
   &:hover {
     text-decoration: none;
-    color: grey;
+    color: #ff715b;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .card-content {
+    h2 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 3rem;
+    }
+  }
+}
+
+// Page Load Animation
+.home-page-load {
+  box-shadow: 10px 10px 30px #aeaec0, -10px -10px 30px #fff;
+  color: #c7c7c9;
+  .home-card-text {
+    animation-name: textAppear;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes textAppear {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 75;
+  }
+  100% {
+    opacity: 100;
   }
 }

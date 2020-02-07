@@ -9,14 +9,19 @@
 }
 
 .project-card-image {
+  // initial state
+  opacity: 0;
+  //
   width: 225px;
   height: 150px;
   object-fit: cover;
-  border: 1px solid black;
   border-radius: 4px;
 }
 
 .project-card-title {
+  // initial state
+  opacity: 0;
+  //
   text-align: center;
   margin: 2rem auto;
 }
@@ -34,5 +39,48 @@
 
   .project-card-title {
     margin: 2rem auto;
+  }
+}
+
+// Page Load Animation
+.project-card-load {
+  .project-card-image {
+    box-shadow: 5px 5px 20px rgb(200, 200, 200);
+    animation-name: imageAppear;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    animation-duration: 1.2s;
+    animation-fill-mode: forwards;
+  }
+  .project-card-title {
+    animation-name: titleAppear;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    animation-duration: 1.8s;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes imageAppear {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 75;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+
+@keyframes titleAppear {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 75;
+  }
+  100% {
+    opacity: 100;
   }
 }

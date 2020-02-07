@@ -7,6 +7,25 @@ window.addEventListener("load", e => {
   aboutPageLoad();
 });
 
+window.addEventListener("click", e => {
+  console.log(e.target.matches(".card-content, .card-content *"));
+  if (e.target.matches(".card-content, .card-content *")) {
+    homeCardClick();
+    // e.preventDefault();
+  }
+});
+
+const homeCardClick = () => {
+  const homeCards = Array.from(document.querySelectorAll(".home-card"));
+  homeCards.forEach((card, i) => {
+    setTimeout(() => {
+      // iterate through each card in the list
+      // apply transition to card
+      card.classList.remove("home-page-load");
+    }, i * 180);
+  });
+};
+
 const homePageLoad = () => {
   console.log(document.querySelectorAll(".home-card").length > 0);
   if (document.querySelectorAll(".home-card").length > 0) {
@@ -43,8 +62,23 @@ const projectPageLoad = () => {
 
 const aboutPageLoad = () => {
   if (document.querySelector(".profile-content")) {
+    // animate in button
     const backButton = document.querySelector(".back-btn");
     backButton.classList.add("back-btn-load");
+    // animate in title
+    const title = document.querySelector(".about-title");
+    title.classList.add("about-title-load");
+    // animate in pic
+    const image = document.querySelector(".profile-pic");
+    setTimeout(() => {
+      image.classList.add("profile-pic-load");
+    }, 1200);
+
+    // animate in description
+    const description = document.querySelector(".about-description");
+    setTimeout(() => {
+      description.classList.add("about-description-load");
+    }, 1400);
   }
 };
 

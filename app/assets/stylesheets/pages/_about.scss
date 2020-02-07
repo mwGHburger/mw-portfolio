@@ -9,6 +9,9 @@
 }
 
 .about-title {
+  // initial state
+  opacity: 0;
+  //
   text-align: center;
   padding: 2rem 2rem;
   border: 4px $text solid;
@@ -35,6 +38,9 @@
 }
 // TODO
 .profile-pic {
+  // initial state
+  opacity: 0;
+  //
   margin-top: 4rem;
   height: 180px;
   width: 180px;
@@ -46,6 +52,9 @@
 }
 
 .about-description {
+  // initial state
+  opacity: 0;
+  //
   text-align: left;
   margin: 2rem auto;
   padding: 8px 40px;
@@ -69,9 +78,10 @@
     padding: 1rem;
     margin: 0;
     position: relative;
-    top: 9rem;
-    left: -9rem;
+    top: 10rem;
+    left: -8.5rem;
     outline: 4px $text solid;
+    outline-offset: 1rem;
   }
 
   .about-title {
@@ -91,5 +101,82 @@
     p {
       width: 380px;
     }
+  }
+}
+
+// Title Load Animation
+
+.about-title-load {
+  animation-name: aboutTitleBorderAppear;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  animation-duration: 1.8s;
+  animation-fill-mode: forwards;
+  h1 {
+    animation-name: aboutTitleAppear;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+  }
+}
+
+.profile-pic-load {
+  animation-name: aboutImageAppear;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+}
+
+.about-description-load {
+  animation-name: aboutDescAppear;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes aboutTitleBorderAppear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+
+@keyframes aboutTitleAppear {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 100;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes aboutImageAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 100;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes aboutDescAppear {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  100% {
+    opacity: 100;
+    transform: translateX(0px);
   }
 }

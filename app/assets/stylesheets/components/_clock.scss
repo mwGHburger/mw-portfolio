@@ -1,0 +1,53 @@
+.current-clock {
+  // initial state
+  opacity: 0;
+  //
+  color: $text-highlight;
+  h1 {
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .current-clock {
+    h1 {
+      font-size: 4rem;
+    }
+  }
+}
+
+.current-clock-load {
+  animation-name: clockLoad;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes clockLoad {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 100;
+    transform: translateY(0px);
+  }
+}
+
+// clock animation
+.flicker.active {
+  animation-name: flicker;
+  animation-iteration-count: 1;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}

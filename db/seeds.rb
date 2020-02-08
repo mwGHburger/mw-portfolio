@@ -10,10 +10,10 @@ require 'faker'
 puts 'Creating projects...'
     4.times do 
         project = Project.new(
-            name: "Project #{Faker::Superhero.name}",
-            project_link: "https://www.youtube.com/",
-            project_thumbnail: Faker::Avatar.image,
-            description: "This is a test project"
+            name: "Project: Wing It",
+            project_link: "http://wing-it-travel.herokuapp.com/",
+            project_thumbnail: '/assets/wingitTB.png',
+            description: "This is a passion project!"
         )
         project.save!
     end

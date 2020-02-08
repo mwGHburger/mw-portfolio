@@ -1,6 +1,7 @@
 import * as homePage from "../views/homepage";
 import * as aboutPage from "../views/aboutpage";
 import * as portfolioPage from "../views/portfoliopage";
+import * as blogPage from "../views/blogpage";
 
 // LOAD event
 window.addEventListener("load", e => {
@@ -10,6 +11,8 @@ window.addEventListener("load", e => {
   portfolioPage.projectPageLoad();
   // About page
   aboutPage.aboutPageLoad();
+  // Blog page
+  blogPage.blogPageLoad();
 });
 
 // CLICK event

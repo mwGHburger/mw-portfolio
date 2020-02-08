@@ -40,10 +40,13 @@
     &:hover {
       text-decoration: none;
       transform: scale(1.1);
-      color: #ff715b;
+      color: #f8f8fa;
       transition: 1s;
       box-shadow: 20px 20px 60px rgba(174, 174, 192, 0.5),
         -20px -20px 60px rgba(255, 255, 255, 0.5);
+      background: linear-gradient(-45deg, #ff9372, #ff72a8, #72d9ff, #72ffde);
+      background-size: 300% 300%;
+      animation: gradient 10s ease infinite;
     }
   }
 }
@@ -70,5 +73,18 @@
   }
   100% {
     opacity: 100;
+  }
+}
+
+// Card Hover Animation
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }

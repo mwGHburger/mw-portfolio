@@ -24,13 +24,6 @@ window.addEventListener("click", e => {
   }
 });
 
-// HOVER event
-window.addEventListener("hover", e => {
-  if (e.target.matches(".card-content, .card-content *")) {
-    console.log("todo");
-  }
-});
-
 homePage.getCurrentTime();
 setInterval(homePage.getCurrentTime, 2000);
 

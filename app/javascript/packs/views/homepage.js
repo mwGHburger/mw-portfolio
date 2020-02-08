@@ -1,5 +1,4 @@
 export const homePageLoad = () => {
-  console.log(document.querySelectorAll(".home-card").length > 0);
   if (document.querySelectorAll(".home-card").length > 0) {
     const homeCards = Array.from(document.querySelectorAll(".home-card"));
     homeCards.forEach((card, i) => {

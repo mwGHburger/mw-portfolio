@@ -24,11 +24,15 @@
   }
   &:active {
     text-decoration: none;
-    color: #ff715b;
+    background: linear-gradient(-45deg, #ff9372, #ff72a8, #72d9ff, #72ffde);
+    background-size: 200% 200%;
+    color: #f8f8fa;
   }
   &:hover {
     text-decoration: none;
-    color: #ff715b;
+    background: linear-gradient(-45deg, #ff9372, #ff72a8, #72d9ff, #72ffde);
+    background-size: 200% 200%;
+    color: #f8f8fa;
   }
 }
 

@@ -8,13 +8,32 @@
 require 'faker'
 
 puts 'Creating projects...'
-    4.times do 
-        project = Project.new(
-            name: "Project: Wing It",
-            project_link: "http://wing-it-travel.herokuapp.com/",
-            project_thumbnail: '/assets/wingitTB.png',
+    project = Project.new(
+        name: "Project: Wing It",
+        project_link: "http://wing-it-travel.herokuapp.com/",
+        project_thumbnail: '/assets/wingitTB.png',
+        description: "This is a passion project!"
+    )
+    project.save!
+    project = Project.new(
+            name: "Project: React Project Manager",
+            project_link: "https://nostalgic-lalande-7ab82e.netlify.com/",
+            project_thumbnail: '/assets/reactprojmanager.png',
             description: "This is a passion project!"
         )
-        project.save!
-    end
+    project.save!
+    project = Project.new(
+            name: "Project: Heroes for Hire",
+            project_link: "https://airbnb-mwghburger.herokuapp.com/",
+            project_thumbnail: '/assets/heroesforhire.png',
+            description: "This is a passion project!"
+        )
+    project.save!
+    project = Project.new(
+            name: "Project: Food Haven",
+            project_link: "https://food-haven-mw.herokuapp.com/",
+            project_thumbnail: '/assets/foodhaven.png',
+            description: "This is a passion project!"
+        )
+    project.save!
 puts 'Finished!'
